@@ -11,8 +11,6 @@ if (carritoGuardado) {
     productosCarrito = JSON.parse(carritoGuardado);
 }
 
-// Elmentos del DOM
-
 let listaCarrito = document.getElementById('carrito-lista');
 let totalSpan = document.getElementById('total-valor');
 let botonVaciar = document.getElementById('boton-vaciar');
@@ -149,7 +147,7 @@ function cerrarFormulario() {
     }
 }
 
-//
+// Funcion para validar los campos del formulario
 
 function validarCampo(input, errorSpan, validacion) {
     let valor = input.value.trim();
@@ -293,6 +291,7 @@ function actualizarVistaCarrito() {
 }
 
 // Configurar eventos de los botones
+
 if (botonVaciar) {
     botonVaciar.onclick = vaciarCarritoCompleto;
 }
