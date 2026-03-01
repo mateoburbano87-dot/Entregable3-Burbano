@@ -1,0 +1,543 @@
+/* IMPORTACIONES DE FUENTES */
+@import url('https://fonts.googleapis.com/css2?family=Bona+Nova+SC:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Stardos+Stencil:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Alegreya:wght@400;700&display=swap');
+
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ESTILOS GENERALES  */
+body {
+    background-color: #051f20;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+/* HEADER Y TÍTULO */
+.titulo-container {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 1rem;
+    margin: 1rem 0;
+    height: 20rem;
+}
+
+.titulo-principal {
+    font-family: "Bona Nova SC", serif;
+    color: #f8edf8;
+    font-size: 5rem;
+    margin-top: 2rem;
+    text-transform: uppercase;
+}
+
+.logo {
+    width: 25rem;
+    height: auto;
+    margin-top: 2rem;
+}
+
+/* NAVEGACIÓN */
+.nav-container {
+    background-color: #17434a;
+    padding: 5rem 0;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 5rem;
+    width: 95%;
+    border-radius: 5px;
+}
+
+.nav-container ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+}
+
+.nav-li {
+    list-style: none;
+    text-transform: uppercase;
+    transition: color 0.3s;
+}
+
+.link-nav {
+    font-family: "Abril Fatface", serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    text-decoration: none;
+    color: #f8edf8;
+    text-align: center;
+    width: 100%;
+}
+
+.icon-nav {
+    height: 3.5rem;
+    margin-bottom: 0.5rem;
+    color: #f8edf8;
+}
+
+/* SECCIÓN PRODUCTOS DESTACADOS */
+.titulo-seccion {
+    font-family: "Bona Nova SC", serif;
+    color: #f8edf8;
+    font-size: 3rem;
+    margin: 2rem 0;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.p-descripcion {
+    font-family: "Stardos Stencil", system-ui;
+    color: #f8edf8;
+    font-size: 2rem;
+    margin: 2rem 0;
+    text-align: center;
+}
+
+/* CARDS DE PRODUCTOS */
+.card-body {
+    font-family: "Alegreya", serif;
+    font-size: 17px;
+    background: #235347;
+    border-radius: 1.5rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+    padding: 16px;
+    margin: 16px;
+    width: 440px;
+    height: 500px;
+    display: inline-block;
+    vertical-align: top;
+    text-align: center;
+}
+
+.card-img {
+    width: 100%;
+    height: 250px;
+    object-fit: contain;
+    border-radius: 1.5rem 1.5rem 0 0;
+    margin-bottom: 12px;
+}
+
+.card-name {
+    color: #f8edf8;
+    font-size: 1.2em;
+    font-weight: bold;
+    margin: 8px 0;
+}
+
+.card-desc {
+    color: #f8edf8;
+    margin-bottom: 8px;
+}
+
+.card-price {
+    color: #f8edf8;
+    font-weight: bold;
+    margin-bottom: 12px;
+}
+
+.card-button {
+    font-family: "Alegreya", serif;
+    background: #f8edf8;
+    color: #051f20;
+    border: none;
+    border-radius: 6px;
+    padding: 8px 16px;
+    cursor: pointer;
+    font-size: 18px;
+    transition: background 0.3s;
+}
+
+.card-button:hover {
+    background: #21867a;
+}
+
+/* SECCIÓN CARRITO */
+
+.seccion-carrito {
+    margin-top: 50px;
+    padding: 20px;
+}
+
+.contenedor-carrito {
+    background-color: #17434a;
+    border-radius: 30px;
+    padding: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.titulo-carrito {
+    font-family: "Bona Nova SC", serif;
+    color: #f8edf8;
+    font-size: 40px;
+    text-align: center;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+}
+
+.lista-carrito {
+    background-color: #0f2e33;
+    border-radius: 20px;
+    padding: 20px;
+    min-height: 200px;
+    max-height: 500px;
+    overflow-y: auto;
+}
+
+.carrito-vacio {
+    font-family: "Alegreya", serif;
+    color: #f8edf8;
+    text-align: center;
+    font-size: 18px;
+    padding: 50px;
+    opacity: 0.7;
+}
+
+/* PRODUCTOS DENTRO DEL CARRITO */
+.producto-carrito {
+    background-color: #235347;
+    border-radius: 15px;
+    padding: 15px;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    color: #f8edf8;
+    font-family: "Alegreya", serif;
+}
+
+.imagen-producto-carrito {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+    background-color: #f8edf8;
+    border-radius: 10px;
+    padding: 5px;
+}
+
+.info-producto-carrito {
+    flex: 1;
+}
+
+.nombre-producto-carrito {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.detalle-producto-carrito {
+    font-size: 14px;
+    opacity: 0.9;
+    margin-bottom: 5px;
+}
+
+.subtotal-producto-carrito {
+    font-size: 16px;
+    color: #ffd700;
+    font-weight: bold;
+}
+
+.botones-producto-carrito {
+    display: flex;
+    gap: 10px;
+}
+
+.boton-quitar-uno {
+    background-color: #ffc107;
+    color: #051f20;
+    border: none;
+    border-radius: 8px;
+    width: 40px;
+    height: 40px;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.boton-quitar-uno:hover {
+    background-color: #e0a800;
+}
+
+.boton-eliminar-todo {
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    width: 40px;
+    height: 40px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.boton-eliminar-todo:hover {
+    background-color: #c82333;
+}
+
+/* FOOTER DEL CARRITO */
+.carrito-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 2px solid #3a7b6e;
+}
+
+.carrito-total {
+    font-family: "Alegreya", serif;
+    color: #f8edf8;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.boton-vaciar {
+    background-color: #6c757d;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    padding: 10px 30px;
+    font-size: 18px;
+    font-family: "Alegreya", serif;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.boton-vaciar:hover {
+    background-color: #5a6268;
+}
+
+/* BOTÓN FINALIZAR COMPRA */
+
+.boton-finalizar {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    padding: 10px 30px;
+    font-size: 18px;
+    font-family: "Alegreya", serif;
+    cursor: pointer;
+    margin-left: 10px;
+    transition: background 0.3s;
+}
+
+.boton-finalizar:hover {
+    background-color: #218838;
+}
+
+/* Modal del formulario de envío */
+
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    font-family: "Alegreya", serif;
+}
+
+.modal-contenido {
+    background-color: #17434a;
+    border-radius: 20px;
+    padding: 30px;
+    max-width: 900px;
+    width: 90%;
+    max-height: 80vh;
+    overflow-y: auto;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    border: 1px solid #3a7b6e;
+}
+
+.modal-titulo {
+    color: #f8edf8;
+    font-size: 38px;
+    margin-bottom: 10px;
+    text-align: center;
+    font-family: "Bona Nova SC", serif;
+}
+
+.modal-subtitulo {
+    color: #f8edf8;
+    text-align: center;
+    margin-bottom: 25px;
+    opacity: 0.9;
+}
+
+/*  FORMULARIO */
+
+.formulario-envio {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.campo-formulario {
+    display: flex;
+    flex-direction: column;
+}
+
+.campo-formulario label {
+    font-family: "Alegreya", serif;
+    color: #f8edf8;
+    margin-bottom: 5px;
+    font-size: 26px;
+    font-weight: 600;
+}
+
+.campo-formulario input,
+.campo-formulario textarea {
+    padding: 12px 15px;
+    border-radius: 8px;
+    border: 2px solid #3a7b6e;
+    background-color: #0f2e33;
+    color: #f8edf8;
+    font-size: 20px;
+    font-family: "Alegreya", serif;
+    transition: border-color 0.3s;
+}
+
+.campo-formulario input:focus,
+.campo-formulario textarea:focus {
+    outline: none;
+    border-color: #21867a;
+}
+
+.campo-formulario input::placeholder,
+.campo-formulario textarea::placeholder {
+    color: #f8edf8;
+    opacity: 0.5;
+}
+
+.campo-formulario textarea {
+    resize: vertical;
+    min-height: 80px;
+}
+
+.fila-dos-columnas {
+    display: flex;
+    gap: 15px;
+}
+
+.fila-dos-columnas .campo-formulario {
+    flex: 1;
+}
+
+/* ERRORES  */
+.error-campo {
+    color: #ff6b6b;
+    font-size: 18px;
+    margin-top: 5px;
+    min-height: 20px;
+}
+
+.campo-formulario input.error,
+.campo-formulario textarea.error {
+    border-color: #ff6b6b;
+}
+
+/* Resumen de la compra */
+
+.resumen-compra-modal {
+    background-color: #235347;
+    border-radius: 10px;
+    padding: 15px;
+    margin: 10px 0;
+    text-align: center;
+}
+
+.resumen-compra-modal p {
+    color: #f8edf8;
+    font-size: 18px;
+}
+
+.resumen-compra-modal span {
+    color: #ffd700;
+    font-weight: bold;
+    font-size: 22px;
+}
+
+/* Botones del modal */
+
+.botones-modal {
+    display: flex;
+    gap: 15px;
+    margin-top: 10px;
+}
+
+.boton-cancelar {
+    flex: 1;
+    background-color: #6c757d;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    padding: 12px;
+    font-size: 16px;
+    font-family: "Alegreya", serif;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.boton-cancelar:hover {
+    background-color: #5a6268;
+}
+
+.boton-confirmar {
+    flex: 1;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    padding: 12px;
+    font-size: 16px;
+    font-family: "Alegreya", serif;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.boton-confirmar:hover {
+    background-color: #218838;
+}
+
+.boton-confirmar:disabled {
+    background-color: #6c757d;
+    cursor: not-allowed;
+    opacity: 0.5;
+}
+
+/* Footer  */
+
+.footer {
+    background: #17434a;
+    color: #f8edf8;
+    text-align: center;
+    padding: 1rem 0;
+    font-family: "Alegreya", serif;
+    font-size: 3rem;
+    margin-top: 2rem;
+    height: 5rem;
+    width: 95%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 2rem;
+    border-radius: 2rem;
+}

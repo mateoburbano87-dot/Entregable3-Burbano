@@ -1,0 +1,199 @@
+[
+    {
+        "id": 1,
+        "nombre": "Asus Rog SCAR 18",
+        "categoria": "Portátiles",
+        "precio": 1200,
+        "descripcion": "Laptop de alto rendimiento",
+        "imagen": "images/productos/portatiles/Asus_scar18.png"
+    },
+    {
+        "id": 2,
+        "nombre": "Portátil Asus VivoBook Core i7 12TH 16GB 1TB TOUCHSCREEN",
+        "categoria": "Portátiles",
+        "precio": 800,
+        "descripcion": "Laptop delgada y ligera",
+        "imagen": "images/productos/portatiles/Portátil Asus VivoBook Core i7 12TH 16GB 1TB TOUCHSCREEN.webp"
+    },
+    {
+        "id": 3,
+        "nombre": "Macbook Pro 16 Pulgadas",
+        "categoria": "Portátiles",
+        "precio": 1400,
+        "descripcion": "Laptop con pantalla 4K",
+        "imagen": "images/productos/portatiles/Macbook Pro 16 Pulgadas.png"
+    },
+    {
+        "id": 4,
+        "nombre": "Portátil HP 14″ Celeron",
+        "categoria": "Portátiles",
+        "precio": 500,
+        "descripcion": "Laptop para uso diario",
+        "imagen": "images/productos/portatiles/Portátil HP 14″ Celeron.webp"
+    },
+    {
+        "id": 5,
+        "nombre": "Torre del Caballero",
+        "categoria": "PC Ensamblados",
+        "precio": 600,
+        "descripcion": "PC con luces RGB",
+        "imagen": "images/productos/PC_ensamblados/Torre-caballero.webp"
+    },
+    {
+        "id": 6,
+        "nombre": "Torre del Rey",
+        "categoria": "PC Ensamblados",
+        "precio": 1500,
+        "descripcion": "PC para trabajo",
+        "imagen": "images/productos/PC_ensamblados/Torre-Rey.png"
+    },
+    {
+        "id": 7,
+        "nombre": "Silla Gamer Razer Iskur X",
+        "categoria": "Sillas",
+        "precio": 300,
+        "descripcion": "Silla ergonómica con soporte lumbar",
+        "imagen": "images/productos/sillas/razer-iskur-v2-x-ergonomic-gaming-chair-black.png"
+    },
+    {
+        "id": 8,
+        "nombre": "Silla de Oficina Ergonómica",
+        "categoria": "Sillas",
+        "precio": 150,
+        "descripcion": "Silla ajustable para oficina",
+        "imagen": "images/productos/sillas/Silla ergonomica-regina.png"
+    },
+    {
+        "id": 9,
+        "nombre": "Cámara Web Logitech C920 HD Pro",
+        "categoria": "Streaming",
+        "precio": 80,
+        "descripcion": "Cámara web Full HD para streaming",
+        "imagen": "images/productos/streaming/Cámara Web Logitech C920 HD Pro.png"
+    },
+    {
+        "id": 10,
+        "nombre": "Micrófono Blue Yeti USB",
+        "categoria": "Streaming",
+        "precio": 120,
+        "descripcion": "Micrófono de condensador USB para streaming y podcasting",
+        "imagen": "images/productos/streaming/Micrófono Blue Yeti USB.png"
+    },
+    {
+        "id": 11,
+        "nombre": "TECLADO LOGITECH PRO X TKL LIGHTSPEED WHITE",
+        "categoria": "Teclados",
+        "subcategoria": "Mecánico",
+        "precio": 100,
+        "descripcion": "Teclado mecánico RGB",
+        "imagen": "images/productos/perifericos/teclados/TECLADO LOGITECH PRO X TKL LIGHTSPEED WHITE.png"
+    },
+    {
+        "id": 12,
+        "nombre": "Logitech G PRO 2 LIGHTSPEED",
+        "categoria": "Mouse",
+        "subcategoria": "Gaming",
+        "precio": 50,
+        "descripcion": "Ratón de alta precisión",
+        "imagen": "images/productos/perifericos/mouse/logitech_Pro2.png"
+    },
+    {
+        "id": 13,
+        "nombre": "DIADEMA LOGITECH ASTRO A50 X LIGHTSPEED WIRELESS + BASE STATION (WHITE)",
+        "categoria": "Diademas",
+        "subcategoria": "Gaming",
+        "precio": 80,
+        "descripcion": "Auriculares con sonido envolvente",
+        "imagen": "images/productos/perifericos/diademas/DIADEMA LOGITECH ASTRO A50 X LIGHTSPEED WIRELESS + BASE STATION (WHITE).png"
+    },
+    {
+        "id": 14,
+        "nombre": "ASUS Republic of Gamers Swift OLED PG27AQWP-W 26.5\"",
+        "categoria": "Monitores",
+        "subcategoria": "Gaming",
+        "precio": 300,
+        "descripcion": "Monitor OLED de 27 pulgadas con alta tasa de refresco",
+        "imagen": "images/productos/perifericos/monitores/ASUS Republic of Gamers Swift OLED PG27AQWP-W 26.5.png"
+    },
+    {
+        "id": 15,
+        "nombre": "HYTE-CNVS-Analog-Eternity",
+        "categoria": "Mousepad",
+        "subcategoria": "Gaming",
+        "precio": 20,
+        "descripcion": "Mousepad con diseño personalizado",
+        "imagen": "images/productos/perifericos/mousepad/HYTE-CNVS-Analog-Eternity.png"
+    },
+    {
+        "id": 16,
+        "nombre": "Procesador Intel core Ultra i7-265k",
+        "categoria": "Procesadores",
+        "subcategoria": "Ultra",
+        "precio": 350,
+        "descripcion": "Procesador de 8 núcleos",
+        "imagen": "images/productos/componentes/procesadores/Procesador Intel Ultra core i7-265k.png"
+    },
+    {
+        "id": 17,
+        "nombre": "TUF GAMING B850-PLUS WIFI",
+        "categoria": "Placa Madre",
+        "subcategoria": "TUF GAMING",
+        "precio": 200,
+        "descripcion": "Placa madre ATX",
+        "imagen": "images/productos/componentes/placa_madre/TUF GAMING B850-PLUS WIFI.png"
+    },
+    {
+        "id": 18,
+        "nombre": "Memoria RAM Corsair Vengeance RGB 32GB (2 x 16GB)",
+        "categoria": "Memoria RAM",
+        "subcategoria": "Corsair",
+        "precio": 80,
+        "descripcion": "Memoria de alta velocidad",
+        "imagen": "images/productos/componentes/RAM/Memoria RAM Corsair Vengeance RGB 32GB (2 x 16GB).png"
+    },
+    {
+        "id": 19,
+        "nombre": "Disco SSD M.2 SAMSUNG 1TB 980 PRO",
+        "categoria": "Almacenamiento",
+        "subcategoria": "SSD M.2",
+        "precio": 120,
+        "descripcion": "Almacenamiento rápido",
+        "imagen": "images/productos/componentes/almacenamiento/DISCO-SOLIDO-SSD-M.2-SAMSUNG-1TB-980-PRO-1.webp"
+    },
+    {
+        "id": 20,
+        "nombre": "GeForce RTX™ 5060 8G GAMING OC",
+        "categoria": "Tarjetas Gráficas",
+        "subcategoria": "NVIDIA",
+        "precio": 600,
+        "descripcion": "GPU de última generación",
+        "imagen": "images/productos/componentes/tarjeta_grafica/GeForce RTX™ 5060 8G GAMING OC.png"
+    },
+    {
+        "id": 21,
+        "nombre": "TUF Gaming 750W Gold",
+        "categoria": "Fuente de Poder",
+        "subcategoria": "TUF Gaming",
+        "precio": 100,
+        "descripcion": "Fuente modular 80+ Gold",
+        "imagen": "images/productos/componentes/fuente_poder/TUF Gaming 750W Gold.png"
+    },
+    {
+        "id": 22,
+        "nombre": "ASUS ROG Hyperion GR701 Edición EVA-02",
+        "categoria": "Chasis",
+        "subcategoria": "ASUS ROG",
+        "precio": 350,
+        "descripcion": "Gabinete con ventiladores RGB",
+        "imagen": "images/productos/componentes/chasis/ASUS ROG Hyperion GR701 Edición EVA-02.png"
+    },
+    {
+        "id": 23,
+        "nombre": "ASUS ROG RYUO IV 360 ARGB",
+        "categoria": "Refrigeración",
+        "subcategoria": "ASUS ROG",
+        "precio": 150,
+        "descripcion": "Sistema de refrigeración líquida para CPU",
+        "imagen": "images/productos/componentes/refrigeracion/ASUS ROG RYUO IV 360 ARGB.png"
+    }
+]
