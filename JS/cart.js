@@ -240,7 +240,7 @@ function finalizarCompra() {
     mostrarFormularioEnvio();
 }
 
-//Funcion para actualizar la vista del carrito
+// Funcion para actualizar la vista del carrito
 
 function actualizarVistaCarrito() {
     if (!listaCarrito) return;
