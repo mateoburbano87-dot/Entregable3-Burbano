@@ -25,7 +25,9 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Función auxiliar para mostrar mensajes
     function mostrarMensaje(texto) {
-        contenedor.innerHTML = '';
+        while (contenedor.firstChild) {
+            contenedor.removeChild(contenedor.firstChild);
+        }
         let clon = templateMensaje.content.cloneNode(true);
         clon.querySelector('.mensaje-error').textContent = texto;
         contenedor.appendChild(clon);
@@ -43,7 +45,9 @@ document.addEventListener('DOMContentLoaded', function() {
                 return;
             }
             
-            contenedor.innerHTML = '';
+            while (contenedor.firstChild) {
+                contenedor.removeChild(contenedor.firstChild);
+            }
             
             // Crear card de los productos destacados
             for (let i = 0; i < productosDestacados.length; i++) {

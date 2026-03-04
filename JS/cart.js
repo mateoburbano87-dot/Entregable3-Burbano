@@ -98,7 +98,9 @@ function vaciarCarritoCompleto() {
 function mostrarMensajeCarrito(texto) {
     if (!listaCarrito || !templateMensajeCarrito) return;
     
-    listaCarrito.innerHTML = '';
+    while (listaCarrito.firstChild) {
+        listaCarrito.removeChild(listaCarrito.firstChild);
+    }
     let clon = templateMensajeCarrito.content.cloneNode(true);
     clon.querySelector('.mensaje-carrito').textContent = texto;
     listaCarrito.appendChild(clon);
@@ -252,7 +254,9 @@ function actualizarVistaCarrito() {
         return;
     }
 
-    listaCarrito.innerHTML = '';
+    while (listaCarrito.firstChild) {
+        listaCarrito.removeChild(listaCarrito.firstChild);
+    }
 
     for (let i = 0; i < productosCarrito.length; i++) {
         let producto = productosCarrito[i];
@@ -321,7 +325,10 @@ function crearResumenCompra(total, datos) {
 
     filas.forEach(([titulo, valor]) => {
         const p = document.createElement('p');
-        p.innerHTML = `<strong>${titulo}:</strong> ${valor}`;
+        const strong = document.createElement('strong');
+        strong.textContent = titulo + ': ';
+        p.appendChild(strong);
+        p.appendChild(document.createTextNode(valor));
         contenedor.appendChild(p);
     });
 

@@ -54,7 +54,9 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Función auxiliar para mostrar mensajes
     function mostrarMensaje(contenedor, template, texto) {
-        contenedor.innerHTML = '';
+        while (contenedor.firstChild) {
+            contenedor.removeChild(contenedor.firstChild);
+        }
         let clon = template.content.cloneNode(true);
         clon.querySelector('.mensaje-error').textContent = texto;
         contenedor.appendChild(clon);
@@ -71,7 +73,9 @@ document.addEventListener('DOMContentLoaded', function() {
                 return;
             }
             
-            contenedor.innerHTML = '';
+            while (contenedor.firstChild) {
+                contenedor.removeChild(contenedor.firstChild);
+            }
             
             for (let i = 0; i < productosCategoria.length; i++) {
                 let producto = productosCategoria[i];
@@ -86,7 +90,9 @@ document.addEventListener('DOMContentLoaded', function() {
                 img.src = '../' + producto.imagen;
                 img.alt = producto.nombre;
                 
-                img.onerror = function() {};
+                img.onerror = function() {
+                    this.src = '../images/placeholder.png';
+                };
                 
                 let boton = clon.querySelector('.card-button');
                 boton.onclick = function() {
