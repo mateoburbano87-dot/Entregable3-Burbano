@@ -1,15 +1,15 @@
-// Cargar los producots en la seccion destacados
+// Cargar los productos en la seccion destacados
 
 document.addEventListener('DOMContentLoaded', function() {
     console.log('Iniciando carga de productos destacados');
     
     // IDs de los productos que se muestran en la seccion destacados
-
     let idsDestacados = [1, 16, 3, 7, 14, 20];
     
     // Buscar los elementos en el HTML
     let contenedor = document.getElementById('productos-destacados');
-    let template = document.getElementById('template-card');
+    let templateCard = document.getElementById('template-card');
+    let templateMensaje = document.getElementById('template-mensaje');
     
     // Verificar que existan los elementos
     if (!contenedor) {
@@ -17,40 +17,47 @@ document.addEventListener('DOMContentLoaded', function() {
         return;
     }
     
-    if (!template) {
+    if (!templateCard) {
         console.error('No encontré el template #template-card');
         return;
     }
     
-    // Cargar el catálogo de productos
+    if (!templateMensaje) {
+        console.error('No encontré el template #template-mensaje');
+        return;
+    }
     
+    // Función auxiliar para mostrar mensajes
+    function mostrarMensaje(texto) {
+        contenedor.innerHTML = '';
+        let clon = templateMensaje.content.cloneNode(true);
+        clon.querySelector('.mensaje-error').textContent = texto;
+        contenedor.appendChild(clon);
+    }
+    
+    // Cargar el catálogo de productos
     cargarCatalogo()
         .then(function() {
             console.log('Catálogo cargado. Total:', catalogoProductos.length);
             
             // Filtrar solo los productos destacados
-
             let productosDestacados = productosPorIds(idsDestacados);
             
             if (productosDestacados.length === 0) {
-                contenedor.innerHTML = '<p class="mensaje-error">No hay productos destacados</p>';
+                mostrarMensaje('No hay productos destacados');
                 return;
             }
-            
             
             contenedor.innerHTML = '';
             
             // Crear card de los productos destacados
-
             for (let i = 0; i < productosDestacados.length; i++) {
                 let producto = productosDestacados[i];
                 
                 // Clonar el template
-
-                let clon = template.content.cloneNode(true);
+                let clon = templateCard.content.cloneNode(true);
                 
                 // LLenar la card con los datos del producto
-
                 clon.querySelector('.card-name').textContent = producto.nombre;
                 clon.querySelector('.card-desc').textContent = producto.descripcion;
                 clon.querySelector('.card-price').textContent = '$' + producto.precio;
@@ -60,14 +67,12 @@ document.addEventListener('DOMContentLoaded', function() {
                 img.alt = producto.nombre;
                 
                 // Si no carga la imagen se muestra un placeholder
-
                 img.onerror = function() {
                     console.warn('No se pudo cargar la imagen:', producto.imagen);
                     this.src = 'images/placeholder.png';
                 };
                 
                 // Configurar el botón para agregar al carrito
-
                 let boton = clon.querySelector('.card-button');
                 boton.onclick = function() {
                     agregarProducto(
@@ -79,12 +84,11 @@ document.addEventListener('DOMContentLoaded', function() {
                 };
                 
                 // Agregar la card al contenedor
-                
                 contenedor.appendChild(clon);
             }
         })
         .catch(function(error) {
             console.error('Error al cargar productos:', error);
-            contenedor.innerHTML = '<p class="mensaje-error">Error al cargar los productos. Intenta de nuevo.</p>';
+            mostrarMensaje('Error al cargar los productos. Intenta de nuevo.');
         });
 });

@@ -5,7 +5,6 @@ let modalFormulario = null;
 let datosEnvio = null;
 
 // Cargar carrito guardado
-
 let carritoGuardado = localStorage.getItem('tomanTechCarrito');
 if (carritoGuardado) {
     productosCarrito = JSON.parse(carritoGuardado);
@@ -15,9 +14,9 @@ let listaCarrito = document.getElementById('carrito-lista');
 let totalSpan = document.getElementById('total-valor');
 let botonVaciar = document.getElementById('boton-vaciar');
 let templateCarrito = document.getElementById('template-carrito');
+let templateMensajeCarrito = document.getElementById('template-mensaje-carrito');
 
 // Función para agregar producto
-
 function agregarProducto(nombre, precio, imagen, id) {
     let indiceExistente = -1;
     for (let i = 0; i < productosCarrito.length; i++) {
@@ -95,8 +94,18 @@ function vaciarCarritoCompleto() {
     actualizarVistaCarrito();
 }
 
-// Funcion para mostrar el formulario de envio
+// Función auxiliar para mostrar mensaje en el carrito
+function mostrarMensajeCarrito(texto) {
+    if (!listaCarrito || !templateMensajeCarrito) return;
+    
+    listaCarrito.innerHTML = '';
+    let clon = templateMensajeCarrito.content.cloneNode(true);
+    clon.querySelector('.mensaje-carrito').textContent = texto;
+    listaCarrito.appendChild(clon);
+    if (totalSpan) totalSpan.textContent = '0';
+}
 
+// Funcion para mostrar el formulario de envio
 function mostrarFormularioEnvio() {
     if (productosCarrito.length === 0) {
         Swal.fire({
@@ -148,7 +157,6 @@ function cerrarFormulario() {
 }
 
 // Funcion para validar los campos del formulario
-
 function validarCampo(input, errorSpan, validacion) {
     let valor = input.value.trim();
     let error = '';
@@ -241,20 +249,15 @@ function finalizarCompra() {
 }
 
 // Funcion para actualizar la vista del carrito
-
 function actualizarVistaCarrito() {
     if (!listaCarrito) return;
 
-    listaCarrito.innerHTML = '';
-
     if (productosCarrito.length === 0) {
-        let mensajeVacio = document.createElement('p');
-        mensajeVacio.className = 'carrito-vacio';
-        mensajeVacio.textContent = 'El carrito está vacío';
-        listaCarrito.appendChild(mensajeVacio);
-        totalSpan.textContent = '0';
+        mostrarMensajeCarrito('El carrito está vacío');
         return;
     }
+
+    listaCarrito.innerHTML = '';
 
     for (let i = 0; i < productosCarrito.length; i++) {
         let producto = productosCarrito[i];
@@ -291,7 +294,6 @@ function actualizarVistaCarrito() {
 }
 
 // Configurar eventos de los botones
-
 if (botonVaciar) {
     botonVaciar.onclick = vaciarCarritoCompleto;
 }

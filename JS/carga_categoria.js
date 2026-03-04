@@ -4,19 +4,16 @@ document.addEventListener('DOMContentLoaded', function() {
     console.log('Iniciando carga por categoría');
     
     // Verificar que las funciones necesarias existen
-
     if (typeof cargarCatalogo === 'undefined') {
         console.error('Error: No se encontró la función cargarCatalogo');
         return;
     }
     
     // Obtener el nombre del archivo actual
-
     let paginaActual = window.location.pathname.split('/').pop();
     let categoriaBuscada = '';
     
     // Asignar categoría según el nombre del archivo
-    
     if (paginaActual === '00PC.html') categoriaBuscada = 'PC Ensamblados';
     else if (paginaActual === '01portatiles.html') categoriaBuscada = 'Portátiles';
     else if (paginaActual === '02CPU.html') categoriaBuscada = 'Procesadores';
@@ -39,26 +36,39 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Buscar los elementos en el HTML
     let contenedor = document.getElementById('productos-categoria');
-    let template = document.getElementById('template-card');
+    let templateCard = document.getElementById('template-card');
+    let templateMensaje = document.getElementById('template-mensaje');
     
     if (!contenedor) {
         console.error('No encontré el contenedor #productos-categoria');
         return;
     }
     
-    if (!template) {
+    if (!templateCard) {
         console.error('No encontré el template #template-card');
+        return;
+    }
+    
+    if (!templateMensaje) {
+        console.error('No encontré el template #template-mensaje');
         return;
     }
     
     if (!categoriaBuscada) {
         console.warn('No se pudo determinar la categoría');
-        contenedor.innerHTML = '<p class="mensaje-error">Categoría no encontrada</p>';
+        mostrarMensaje(contenedor, templateMensaje, 'Categoría no encontrada');
         return;
     }
     
-    // Cargar el catálogo y filtrar
+    // Función auxiliar para mostrar mensajes
+    function mostrarMensaje(contenedor, template, texto) {
+        contenedor.innerHTML = '';
+        let clon = template.content.cloneNode(true);
+        clon.querySelector('.mensaje-error').textContent = texto;
+        contenedor.appendChild(clon);
+    }
     
+    // Cargar el catálogo y filtrar
     cargarCatalogo()
         .then(function() {
             console.log('Catálogo cargado. Total:', catalogoProductos.length);
@@ -66,7 +76,7 @@ document.addEventListener('DOMContentLoaded', function() {
             let productosCategoria = productosPorCategoria(categoriaBuscada);
             
             if (productosCategoria.length === 0) {
-                contenedor.innerHTML = '<p class="mensaje-error">No hay productos en esta categoría</p>';
+                mostrarMensaje(contenedor, templateMensaje, 'No hay productos en esta categoría');
                 return;
             }
             
@@ -75,7 +85,7 @@ document.addEventListener('DOMContentLoaded', function() {
             for (let i = 0; i < productosCategoria.length; i++) {
                 let producto = productosCategoria[i];
                 
-                let clon = template.content.cloneNode(true);
+                let clon = templateCard.content.cloneNode(true);
                 
                 clon.querySelector('.card-name').textContent = producto.nombre;
                 clon.querySelector('.card-desc').textContent = producto.descripcion;
@@ -100,7 +110,7 @@ document.addEventListener('DOMContentLoaded', function() {
                         );
                     } else {
                         console.error('La función agregarProducto no está disponible');
-                        alert('Error: El carrito no está funcionando');
+                        mostrarMensaje(contenedor, templateMensaje, 'Error: El carrito no está funcionando');
                     }
                 };
                 
@@ -109,6 +119,6 @@ document.addEventListener('DOMContentLoaded', function() {
         })
         .catch(function(error) {
             console.error('Error al cargar productos:', error);
-            contenedor.innerHTML = '<p class="mensaje-error">Error al cargar los productos</p>';
+            mostrarMensaje(contenedor, templateMensaje, 'Error al cargar los productos');
         });
 });
