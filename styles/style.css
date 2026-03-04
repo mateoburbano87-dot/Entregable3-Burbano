@@ -157,7 +157,6 @@ body {
     padding: 8px 16px;
     cursor: pointer;
     font-size: 18px;
-    transition: background 0.3s;
 }
 
 .card-button:hover {
@@ -255,6 +254,22 @@ body {
     gap: 10px;
 }
 
+.boton-agregar-uno {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    width: 40px;
+    height: 40px;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.boton-agregar-uno:hover {
+    background-color: #218838;
+}
+
 .boton-quitar-uno {
     background-color: #ffc107;
     color: #051f20;
@@ -265,7 +280,6 @@ body {
     font-size: 20px;
     font-weight: bold;
     cursor: pointer;
-    transition: background 0.3s;
 }
 
 .boton-quitar-uno:hover {
@@ -281,7 +295,6 @@ body {
     height: 40px;
     font-size: 16px;
     cursor: pointer;
-    transition: background 0.3s;
 }
 
 .boton-eliminar-todo:hover {
@@ -314,7 +327,6 @@ body {
     font-size: 18px;
     font-family: "Alegreya", serif;
     cursor: pointer;
-    transition: background 0.3s;
 }
 
 .boton-vaciar:hover {
@@ -333,7 +345,6 @@ body {
     font-family: "Alegreya", serif;
     cursor: pointer;
     margin-left: 10px;
-    transition: background 0.3s;
 }
 
 .boton-finalizar:hover {
@@ -494,7 +505,6 @@ body {
     font-size: 16px;
     font-family: "Alegreya", serif;
     cursor: pointer;
-    transition: background 0.3s;
 }
 
 .boton-cancelar:hover {
@@ -511,7 +521,6 @@ body {
     font-size: 16px;
     font-family: "Alegreya", serif;
     cursor: pointer;
-    transition: background 0.3s;
 }
 
 .boton-confirmar:hover {
