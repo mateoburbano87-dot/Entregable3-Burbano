@@ -118,7 +118,6 @@ function mostrarFormularioEnvio() {
 
     let templateForm = document.getElementById('template-formulario-envio');
     if (!templateForm) {
-        console.error('No se encontró el template del formulario');
         Swal.fire({
             title: 'Error',
             text: 'No se pudo cargar el formulario',
@@ -222,21 +221,17 @@ function validarYEnviarFormulario() {
 function procesarCompraConDatos() {
     let total = calcularTotal();
 
-    let mensaje = document.getElementById('template-resumen-compra').innerHTML
-        .replace('{total}', total)
-        .replace('{nombre}', datosEnvio.nombre)
-        .replace('{email}', datosEnvio.email)
-        .replace('{telefono}', datosEnvio.telefono)
-        .replace('{direccion}', datosEnvio.direccion)
-        .replace('{ciudad}', datosEnvio.ciudad)
-        .replace('{codigoPostal}', datosEnvio.codigoPostal)
-        .replace('{notas}', datosEnvio.notas || '');
+    const resumen = crearResumenCompra(total, datosEnvio);
 
     Swal.fire({
         title: '¡Compra realizada con éxito!',
-        html: mensaje,
+        html: '',
         icon: 'success',
-        confirmButtonColor: '#28a745'
+        confirmButtonColor: '#28a745',
+        didOpen: () => {
+            const contenedor = Swal.getHtmlContainer();
+            if (contenedor) contenedor.appendChild(resumen);
+        }
     });
 
     cerrarFormulario();
@@ -310,3 +305,25 @@ if (footerCarrito) {
 }
 
 actualizarVistaCarrito();
+
+function crearResumenCompra(total, datos) {
+    const contenedor = document.createElement('div');
+    const filas = [
+        ['Total', `$${total}`],
+        ['Nombre', datos.nombre],
+        ['Email', datos.email],
+        ['Teléfono', datos.telefono],
+        ['Dirección', datos.direccion],
+        ['Ciudad', datos.ciudad],
+        ['Código Postal', datos.codigoPostal],
+        ['Notas', datos.notas || '']
+    ];
+
+    filas.forEach(([titulo, valor]) => {
+        const p = document.createElement('p');
+        p.innerHTML = `<strong>${titulo}:</strong> ${valor}`;
+        contenedor.appendChild(p);
+    });
+
+    return contenedor;
+}

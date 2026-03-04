@@ -1,11 +1,9 @@
 // Cargar productos según la categoría de la página
 
 document.addEventListener('DOMContentLoaded', function() {
-    console.log('Iniciando carga por categoría');
     
     // Verificar que las funciones necesarias existen
     if (typeof cargarCatalogo === 'undefined') {
-        console.error('Error: No se encontró la función cargarCatalogo');
         return;
     }
     
@@ -32,30 +30,24 @@ document.addEventListener('DOMContentLoaded', function() {
     else if (paginaActual === '15sillas.html') categoriaBuscada = 'Sillas';
     else if (paginaActual === '16streaming.html') categoriaBuscada = 'Streaming';
     
-    console.log('Página:', paginaActual, 'Categoría:', categoriaBuscada);
-    
     // Buscar los elementos en el HTML
     let contenedor = document.getElementById('productos-categoria');
     let templateCard = document.getElementById('template-card');
     let templateMensaje = document.getElementById('template-mensaje');
     
     if (!contenedor) {
-        console.error('No encontré el contenedor #productos-categoria');
         return;
     }
     
     if (!templateCard) {
-        console.error('No encontré el template #template-card');
         return;
     }
     
     if (!templateMensaje) {
-        console.error('No encontré el template #template-mensaje');
         return;
     }
     
     if (!categoriaBuscada) {
-        console.warn('No se pudo determinar la categoría');
         mostrarMensaje(contenedor, templateMensaje, 'Categoría no encontrada');
         return;
     }
@@ -71,7 +63,6 @@ document.addEventListener('DOMContentLoaded', function() {
     // Cargar el catálogo y filtrar
     cargarCatalogo()
         .then(function() {
-            console.log('Catálogo cargado. Total:', catalogoProductos.length);
             
             let productosCategoria = productosPorCategoria(categoriaBuscada);
             
@@ -95,9 +86,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 img.src = '../' + producto.imagen;
                 img.alt = producto.nombre;
                 
-                img.onerror = function() {
-                    console.warn('Imagen no encontrada:', '../' + producto.imagen);
-                };
+                img.onerror = function() {};
                 
                 let boton = clon.querySelector('.card-button');
                 boton.onclick = function() {
@@ -109,7 +98,6 @@ document.addEventListener('DOMContentLoaded', function() {
                             producto.id
                         );
                     } else {
-                        console.error('La función agregarProducto no está disponible');
                         mostrarMensaje(contenedor, templateMensaje, 'Error: El carrito no está funcionando');
                     }
                 };
@@ -117,8 +105,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 contenedor.appendChild(clon);
             }
         })
-        .catch(function(error) {
-            console.error('Error al cargar productos:', error);
+        .catch(function() {
             mostrarMensaje(contenedor, templateMensaje, 'Error al cargar los productos');
         });
 });

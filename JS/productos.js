@@ -19,8 +19,6 @@ function cargarCatalogo() {
         rutaJSON = './JS/data/productos.json';
     }
     
-    console.log('Cargando JSON desde:', rutaJSON);
-    
     return fetch(rutaJSON)
         .then(function(respuesta) {
             if (!respuesta.ok) {
@@ -32,8 +30,7 @@ function cargarCatalogo() {
             catalogoProductos = productos;
             return productos;
         })
-        .catch(function(error) {
-            console.warn('No se pudo cargar el catálogo:', error);
+        .catch(function() {
             return [];
         });
 }
