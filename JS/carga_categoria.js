@@ -52,7 +52,7 @@ document.addEventListener('DOMContentLoaded', function() {
         return;
     }
     
-    // Función auxiliar para mostrar mensajes
+ 
     function mostrarMensaje(contenedor, template, texto) {
         while (contenedor.firstChild) {
             contenedor.removeChild(contenedor.firstChild);
