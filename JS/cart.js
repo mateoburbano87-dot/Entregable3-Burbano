@@ -317,7 +317,7 @@ function actualizarVistaCarrito() {
     totalSpan.textContent = calcularTotal();
 }
 
-// Configurar eventos de los botones
+
 if (botonVaciar) {
     botonVaciar.onclick = vaciarCarritoCompleto;
 }
